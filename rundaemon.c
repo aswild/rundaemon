@@ -18,7 +18,9 @@
 #include <sys/types.h>
 #include <unistd.h>
 
-#define VERSION_STR "1.0"
+#ifndef VERSION_STR
+#define VERSION_STR "unknown"
+#endif
 
 #define DIE(fmt, args...) do { \
         fprintf(stderr, "Error: " fmt "\n", ##args); \

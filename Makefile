@@ -1,11 +1,13 @@
 # Makefile for rundaemon
 
+VERSION = 1.0
+
 PREFIX ?= /usr/local
 BINDIR ?= $(PREFIX)/bin
 
 CC        ?= gcc
 CFLAGS    ?= -g -O2
-ALL_CFLAGS = -Wall -Wextra -Werror $(CFLAGS)
+ALL_CFLAGS = -Wall -Wextra -Werror -DVERSION_STR=\"$(VERSION)\" $(CFLAGS)
 
 TARGET = rundaemon
 SOURCE = rundaemon.c
